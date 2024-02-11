@@ -9,7 +9,7 @@ __pycache__/
 *.cph
 
 # Ignore .idea directory and its contents
-*.idea
+*.idea/
 
 
 # Distribution / packaging
