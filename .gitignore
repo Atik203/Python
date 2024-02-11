@@ -5,6 +5,12 @@ __pycache__/
 
 # C extensions
 *.so
+# Ignore .cph files
+*.cph
+
+# Ignore .idea directory and its contents
+.idea/
+
 
 # Distribution / packaging
 .Python
