@@ -28,7 +28,7 @@ class Shop:
 
 product1 = Product('Milk', 2)
 product2 = Product('Bread', 1)
-shop1 = Shop('Supermarket', 'Lviv')
+shop1 = Shop('Supermarket', 'Dhaka')
 shop1.add_product(product1)
 
 print(shop1.buy_product('Milk'))
