@@ -98,3 +98,20 @@ class Ride_matching:
             ride = Ride(ride_request.rider.current_location, ride_request.end_location)
             driver.accept_ride(ride)
             return ride
+
+
+class Vehicle:
+    speed = {
+        "bike": 40,
+        "car": 60,
+        "bus": 30
+    }
+
+    def __init__(self, vehicle_type, plate_number, rate):
+        self.vehicle_type = vehicle_type
+        self.plate_number = plate_number
+        self.rate = rate
+
+    @abstractmethod
+    def start_drive(self):
+        pass
