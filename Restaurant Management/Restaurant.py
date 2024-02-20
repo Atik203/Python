@@ -1,14 +1,16 @@
 class Restaurant:
-    def __init__(self, name,menu=[]):
+    def __init__(self, name, rent, menu=[]):
         self.name = name
         self.revenue = 0
         self.profit = 0
         self.expense = 0
         self.balance = 0
+        self.rent = rent
         self.chef = None
         self.menu = menu
         self.manager = None
         self.server = None
+        self.orders = []
 
     def add_employee(self, employee_type, employee):
         if employee_type == "chef":
@@ -24,7 +26,7 @@ class Restaurant:
         if amount >= order.bill:
             self.revenue += amount
             self.balance += amount
-            customer.customer_due = 0
+            customer.due_amount = 0
             return amount - order.bill
 
     def pay_expense(self, amount, description):
@@ -42,3 +44,15 @@ class Restaurant:
             employee.receive_salary()
         else:
             print("Insufficient balance")
+
+    def show_employee(self):
+        if self.chef:
+            print(f"Chef: {self.chef.name}")
+        if self.manager:
+            print(f"Manager: {self.manager.name}")
+        if self.server:
+            print(f"Server: {self.server.name}")
+
+    def add_order(self, order):
+        self.orders.append(order)
+        print(f"Order added to {self.name}")

@@ -20,9 +20,9 @@ class Pizza(Food):
 
 
 class Drink(Food):
-    def __init__(self, name, price, isCold=True):
+    def __init__(self, name, price, is_cold=True):
         super().__init__(name, price)
-        self.isCold = isCold
+        self.is_cold = is_cold
 
 
 # composition (HAS-A relationship)
@@ -31,7 +31,6 @@ class Menu:
         self.pizzas = []
         self.burgers = []
         self.drinks = []
-        self.food_items = []
 
     def add_food_item(self, food_item, food_type):
         if food_type == "pizza":
@@ -64,4 +63,4 @@ class Menu:
 
         print("Drinks:")
         for drink in self.drinks:
-            print(f"{drink.name} - {drink.price}")
+            print(f"{drink.name} - {drink.price} - is cold - {drink.is_cold}")
