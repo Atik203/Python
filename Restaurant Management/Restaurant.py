@@ -24,10 +24,13 @@ class Restaurant:
 
     def received_payment(self, order, amount, customer):
         if amount >= order.bill:
-            self.revenue += amount
-            self.balance += amount
+            self.revenue += order.bill
+            self.balance += order.bill
             customer.due_amount = 0
             return amount - order.bill
+
+        else:
+            print("Insufficient payment")
 
     def pay_expense(self, amount, description):
         if amount <= self.balance:
