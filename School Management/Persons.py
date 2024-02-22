@@ -7,26 +7,24 @@ class Person:
 
 
 class Teacher(Person):
-    def __init__(self, name, subject):
+    def __init__(self, name):
         super().__init__(name)
-        self.subject = subject
 
     def teach(self):
         pass
 
-    def take_exam(self, subject, students):
-        for student in students:
-            marks = random.randint(0, 100)
-            # TODO set marks in student object
+    def evaluate_exam(self):
+        marks = random.randint(0, 100)
+        return marks
 
 
 class Student(Person):
-    def __init__(self, name):
+    def __init__(self, name, classroom):
         super().__init__(name)
         self.__id = None
-        self.classroom = None
-        self.subjects = []
+        self.classroom = classroom
         self.marks = {}
+        self.subject_grade = {}
         self.grade = None
 
     @property
