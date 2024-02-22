@@ -49,6 +49,24 @@ class School:
         }
         return grade_map[grade]
 
+
+    @staticmethod
+    def value_to_grade(value):
+        if 4.50 <= value <= 5.00:
+            return "A+"
+        elif value >= 4.00:
+            return "A"
+        elif value >= 3.50:
+            return "A-"
+        elif value >= 3.00:
+            return "B"
+        elif value >= 2.50:
+            return "C"
+        elif value >= 1.00:
+            return "D"
+        else:
+            return "F"
+
     def __repr__(self) -> str:
         print('--------All Classrooms--------')
         for key, value in self.classrooms.items():
@@ -89,6 +107,9 @@ class Classroom:
     def take_semester_final(self):
         for subject in self.subjects:
             subject.exam(self.students)
+
+        for student in self.students:
+            student.calculate_final_grade()
 
     def __str__(self):
         return f'{self.name} has {len(self.students)} students'
