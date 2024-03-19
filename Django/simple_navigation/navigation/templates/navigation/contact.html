@@ -17,5 +17,31 @@
         Go to : <a class="text-red-500" href="/navigation/about/">About</a>
       </h1>
     </div>
+    <hr class="text-bold text-2xl h-4 bg-black mt-4" />
+    <div class="text-center mt-5 font-semibold">
+      <h1>{{email}}</h1>
+      <h1>{{phone}}</h1>
+      <h1>{{list}}</h1>
+      <!-- conditional statement -->
+      {% if age > 18 %}
+      <h1>You can get NID card</h1>
+      {% else %}
+      <h1>You are not eligible</h1>
+      {% endif %}
+
+      <!-- for loop -->
+
+      {% for i in courses %}
+      <h1>{{i.id}}: {{i.name}}</h1>
+      {% endfor %}
+
+      <h1>{{list2 | join:"-"}}</h1>
+
+      <h1>{{birthday | date:"D d M Y"}}</h1>
+      <h1>{{birthday | date:"SHORT_DATETIME_FORMAT"}}</h1>
+
+      <h1>{{ birthday | time:"H:i" }}.</h1>
+      <h1>{{ birthday | time:"H\h i\m" }}.</h1>
+    </div>
   </body>
 </html>
